@@ -13,7 +13,7 @@ const Todo = () => {
   const add = () => {
     setTodos([
       ...todos,
-      { no: count++, text: inputRef.current.value, dispaly: "" },
+      { no: count++, text: inputRef.current.value, display: "" },
     ]);
     inputRef.current.value = "";
     localStorage.setItem("todos_count", count);
@@ -54,8 +54,9 @@ const Todo = () => {
           return (
             <TodoItems
               key={index}
+              setTodos={setTodos}
               no={item.no}
-              dispaly={item.display}
+              display={item.display}
               text={item.text}
             />
           );
